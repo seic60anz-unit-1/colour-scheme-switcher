@@ -3,16 +3,23 @@ const white = document.querySelector('.white');
 const blue = document.querySelector('.blue');
 const yellow = document.querySelector('.yellow');
 const body = document.querySelector('body');
-const colors = document.querySelectorAll('a');
-let dataColor = []
+const btnsColor = document.querySelector('.js-buttons');
+let dataColor = [];
 
-for (let i =0; i < colors.length; i++) {
-    dataColor.push(colors[i].dataset.color);
+for (let i = 0; i < btnsColor.children.length; i++) {
+    dataColor.push(btnsColor.children[i].firstElementChild.dataset.color);
 }
-for (let i =0; i < colors.length; i++) {
-    colors[i].addEventListener('click', function() {
-        body.style.backgroundColor = dataColor[i]
-    })}
+for (let i = 0; i < btnsColor.children.length; i++) {
+    btnsColor.children[i].addEventListener('click', function() {
+        body.style.backgroundColor = dataColor[i];
+    })
+}
+
+
+console.log(btnsColor.children[1]);
+console.log(white)
+
+
 
 
 
